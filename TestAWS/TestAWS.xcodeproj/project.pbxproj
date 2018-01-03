@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D382EA260FF9B14DF8CAC966 /* Pods_TestAWS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CEA9E6CA28DECDA8542115 /* Pods_TestAWS.framework */; };
 		FE2FCA551FFCB24900FA92E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FCA541FFCB24900FA92E9 /* AppDelegate.swift */; };
 		FE2FCA571FFCB24900FA92E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FCA561FFCB24900FA92E9 /* ViewController.swift */; };
 		FE2FCA5A1FFCB24900FA92E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2FCA581FFCB24900FA92E9 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36D5FA7AED3F5D0211233206 /* Pods-TestAWS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAWS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestAWS/Pods-TestAWS.release.xcconfig"; sourceTree = "<group>"; };
+		60CEA9E6CA28DECDA8542115 /* Pods_TestAWS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAWS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB054BBB67BB6F2DBDB045F /* Pods-TestAWS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAWS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestAWS/Pods-TestAWS.debug.xcconfig"; sourceTree = "<group>"; };
 		FE2FCA511FFCB24900FA92E9 /* TestAWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2FCA541FFCB24900FA92E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE2FCA561FFCB24900FA92E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D382EA260FF9B14DF8CAC966 /* Pods_TestAWS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		835394EDE75C42AAB0D3F28C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60CEA9E6CA28DECDA8542115 /* Pods_TestAWS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F459F15F84DA22E846A36585 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEB054BBB67BB6F2DBDB045F /* Pods-TestAWS.debug.xcconfig */,
+				36D5FA7AED3F5D0211233206 /* Pods-TestAWS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FE2FCA481FFCB24900FA92E9 = {
 			isa = PBXGroup;
 			children = (
 				FE2FCA531FFCB24900FA92E9 /* TestAWS */,
 				FE2FCA521FFCB24900FA92E9 /* Products */,
+				F459F15F84DA22E846A36585 /* Pods */,
+				835394EDE75C42AAB0D3F28C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE2FCA631FFCB24A00FA92E9 /* Build configuration list for PBXNativeTarget "TestAWS" */;
 			buildPhases = (
+				2EF6BCF88589BC676672EFC8 /* [CP] Check Pods Manifest.lock */,
 				FE2FCA4D1FFCB24900FA92E9 /* Sources */,
 				FE2FCA4E1FFCB24900FA92E9 /* Frameworks */,
 				FE2FCA4F1FFCB24900FA92E9 /* Resources */,
+				C0273784775438615CD65E63 /* [CP] Embed Pods Frameworks */,
+				3E77B845D82D0872BC6E7234 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EF6BCF88589BC676672EFC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestAWS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E77B845D82D0872BC6E7234 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestAWS/Pods-TestAWS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0273784775438615CD65E63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TestAWS/Pods-TestAWS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+				"${BUILT_PRODUCTS_DIR}/Gallery/Gallery.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gallery.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestAWS/Pods-TestAWS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE2FCA4D1FFCB24900FA92E9 /* Sources */ = {
@@ -272,6 +357,7 @@
 		};
 		FE2FCA641FFCB24A00FA92E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEB054BBB67BB6F2DBDB045F /* Pods-TestAWS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +373,7 @@
 		};
 		FE2FCA651FFCB24A00FA92E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36D5FA7AED3F5D0211233206 /* Pods-TestAWS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
